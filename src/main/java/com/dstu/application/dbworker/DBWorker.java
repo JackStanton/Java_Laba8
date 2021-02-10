@@ -12,12 +12,11 @@ import java.util.ArrayList;
 
 public class DBWorker {
 
-    private DBConnector dbConnector = new DBConnector();
-    private Connection connection = dbConnector.getConnection();
-    private CSVWorker csvWorker;
+    private final DBConnector dbConnector = new DBConnector();
+    private final Connection connection = dbConnector.getConnection();
 
     public DBWorker(String csvFile) throws SQLException, IOException {
-        csvWorker = new CSVWorker(csvFile);
+        CSVWorker csvWorker = new CSVWorker(csvFile);
         ArrayList<Subject> records = csvWorker.getExams();
         Statement statement = connection.createStatement();
         createTables(statement);

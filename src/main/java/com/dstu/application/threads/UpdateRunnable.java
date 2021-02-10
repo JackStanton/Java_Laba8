@@ -6,11 +6,9 @@ import java.sql.SQLException;
 
 public class UpdateRunnable implements Runnable{
 
-    private String queryString = "";
-    private Connection connection;
+    private final Connection connection;
 
     public UpdateRunnable(Connection connection) {
-
         this.connection = connection;
     }
 

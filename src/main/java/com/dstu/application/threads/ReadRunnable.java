@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class ReadRunnable implements Runnable{
 
     private String queryString = "";
-    private Connection connection;
+    private final Connection connection;
 
     public ReadRunnable(String queryString, Connection connection) {
         this.queryString = queryString;
