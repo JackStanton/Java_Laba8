@@ -122,7 +122,7 @@ public class DBWorker {
         return id;
     }
 
-    public void executeCustomQuery() throws SQLException {
+    public void executeCustomQuery() {
         Runnable updateRunnable = new UpdateRunnable(connection);
         Thread updateThread = new Thread(updateRunnable);
         String readString = "SELECT studentName, studentSurename, numberOfRecordBook, subjectName, countOfHours, mark" +

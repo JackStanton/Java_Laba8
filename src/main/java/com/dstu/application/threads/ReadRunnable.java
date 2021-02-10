@@ -37,6 +37,7 @@ public class ReadRunnable implements Runnable{
         System.out.println("Getting data from database...");
         while(true){
             try {
+                assert resultSet != null;
                 if (!resultSet.next()) break;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();

@@ -2,7 +2,6 @@ package com.dstu.application.threads;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UpdateRunnable implements Runnable{
@@ -33,7 +32,7 @@ public class UpdateRunnable implements Runnable{
     }
 
     private String createQuery(){
-        StringBuilder stringBuilder = new StringBuilder("UPDATE student SET studentName = 'Ivan' WHERE");
+        StringBuilder stringBuilder = new StringBuilder("UPDATE student SET studentName = 'Jack' WHERE");
         for (int i = 0; i < 100; i++) {
             stringBuilder.append(" id = '").append(i * 5 + 1).append("' OR ");
         }
